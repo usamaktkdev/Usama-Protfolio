@@ -27,7 +27,7 @@ export default function Hero() {
           <span className="w-2 h-2 rounded-full bg-[#18E299] animate-pulse"></span>
           AVAILABLE FOR WORK
         </motion.div>
-        <motion.h1 variants={itemVariants} className="font-display-xl text-3xl md:text-display-xl text-on-surface mb-md">
+        <motion.h1 variants={itemVariants} className="font-display-xl text-3xl md:text-display-xl font-black tracking-tighter text-on-surface mb-md">
           Architecting Scalable, <span className="text-[#18E299]">High-Performance</span> Mobile Experiences
         </motion.h1>
         <motion.p variants={itemVariants} className="font-body-base text-body-base text-on-surface-variant max-w-full md:max-w-xl mb-lg">

@@ -12,12 +12,12 @@ export default function TrustBar() {
         </div>
         {/* Dart */}
         <div className="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface justify-center">
-          <img src="/Usama-Protfolio/assets/dart.png" alt="Dart" className="w-5 h-5 object-contain grayscale brightness-0 invert opacity-50" />
+          <img src="/Usama-Protfolio/assets/dart2.svg" alt="Dart" className="w-5 h-5 object-contain grayscale brightness-0 invert opacity-50" />
           Dart
         </div>
         {/* JavaScript */}
         <div className="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface justify-center">
-          <img src="/Usama-Protfolio/assets/javascript-svgrepo-com.svg" alt="JavaScript" className="w-5 h-5 object-contain grayscale brightness-0 invert opacity-50" />
+          <img src="/Usama-Protfolio/assets/js2.svg" alt="JavaScript" className="w-5 h-5 object-contain grayscale brightness-0 invert opacity-50" />
           JavaScript
         </div>
         {/* Node.js */}

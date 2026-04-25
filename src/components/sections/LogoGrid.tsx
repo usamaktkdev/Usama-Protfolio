@@ -1,19 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
+// Note: Using plain <img> tags with hardcoded basePath prefix.
+// Next.js <Image> double-prepends basePath on static exports, breaking GitHub Pages.
+// Exact filenames are case-sensitive on GitHub Pages — these match public/assets/ exactly.
 const row1 = [
-  { src: "/assets/pngwing.com.png", alt: "Flutter" },
-  { src: "/assets/dart.png", alt: "Dart" },
-  { src: "/assets/firebase.png", alt: "Firebase" },
-  { src: "/assets/supabase.png", alt: "Supabase" },
+  { src: "/Usama-Protfolio/assets/pngwing.com.png", alt: "Flutter" },
+  { src: "/Usama-Protfolio/assets/dart.png",         alt: "Dart" },
+  { src: "/Usama-Protfolio/assets/firebase.png",     alt: "Firebase" },
+  { src: "/Usama-Protfolio/assets/supabase.png",     alt: "Supabase" },
 ];
 
 const row2: { src: string; alt: string; nudgeX?: number }[] = [
-  { src: "/assets/github-light.png", alt: "GitHub", nudgeX: 16 },
-  { src: "/assets/javascript-svgrepo-com.svg", alt: "JavaScript" },
-  { src: "/assets/nodejs-alt.png", alt: "Node.js", nudgeX: 16 },
+  { src: "/Usama-Protfolio/assets/github-light.png",            alt: "GitHub",     nudgeX: 16 },
+  { src: "/Usama-Protfolio/assets/javascript-svgrepo-com.svg",  alt: "JavaScript"             },
+  { src: "/Usama-Protfolio/assets/nodejs-alt.png",              alt: "Node.js",    nudgeX: 16 },
 ];
 
 export default function LogoGrid() {
@@ -38,11 +40,9 @@ export default function LogoGrid() {
                 transition={{ delay: i * 0.07, type: "spring", stiffness: 120, damping: 22 }}
                 className="flex items-center justify-center"
               >
-                <Image
+                <img
                   src={logo.src}
                   alt={logo.alt}
-                  width={80}
-                  height={48}
                   className="w-auto h-12 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]"
                 />
               </motion.div>
@@ -50,7 +50,7 @@ export default function LogoGrid() {
           </div>
 
           {/* Row 2 — 3 logos (centered, staggered offset) */}
-          {/* ↓ ADJUST LOGO SPACING: change gap-x-8 to gap-x-4 (closer) or gap-x-16 (further apart) */}
+          {/* ↓ ADJUST LOGO SPACING: change gap-x-64 to gap-x-48 (closer) or gap-x-80 (further) */}
           <div className="flex justify-center gap-x-64 w-full mx-auto">
             {row2.map((logo, i) => (
               <motion.div
@@ -62,11 +62,9 @@ export default function LogoGrid() {
                 className="flex items-center justify-center"
                 style={{ transform: logo.nudgeX ? `translateX(${logo.nudgeX}px)` : undefined }}
               >
-                <Image
+                <img
                   src={logo.src}
                   alt={logo.alt}
-                  width={80}
-                  height={48}
                   className="w-auto h-12 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]"
                 />
               </motion.div>
@@ -77,3 +75,4 @@ export default function LogoGrid() {
     </section>
   );
 }
+

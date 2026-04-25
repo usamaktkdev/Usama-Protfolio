@@ -10,7 +10,7 @@ import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative w-full overflow-x-hidden">
       {/* Background Decor */}
       <BackgroundDecor />
       {/* TopNavBar */}
@@ -32,6 +32,6 @@ export default function Home() {
       </main>
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

@@ -108,7 +108,7 @@ export default function Projects() {
               <span className="h-px flex-grow bg-white/5"></span>
               <span className="font-mono-tag text-zinc-500 text-sm">2024</span>
             </div>
-            <h4 className="font-display-xl text-4xl text-on-surface font-bold tracking-tight">A Star Campus CMS</h4>
+            <h4 className="font-display-xl text-4xl text-on-surface font-bold tracking-tight">A Star-CMS</h4>
             <p className="font-body-base text-zinc-400 leading-relaxed text-lg">
               A sophisticated, open-source Campus Management System enabling universities to manage student lifecycles, campus resources, and semesters with an engineered data architecture.
             </p>
@@ -140,7 +140,7 @@ export default function Projects() {
               <span className="h-px flex-grow bg-white/5"></span>
               <span className="font-mono-tag text-zinc-500 text-sm">2023</span>
             </div>
-            <h4 className="font-display-xl text-4xl text-on-surface font-bold tracking-tight">Quantum Real-time Chat</h4>
+            <h4 className="font-display-xl text-4xl text-on-surface font-bold tracking-tight">A Realtime Chat App</h4>
             <p className="font-body-base text-zinc-400 leading-relaxed text-lg">
               An optimized real-time messaging application featuring offline support, presence indicators, and message delivery confirmation built for scalability.
             </p>

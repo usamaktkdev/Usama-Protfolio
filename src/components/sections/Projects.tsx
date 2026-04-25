@@ -10,7 +10,7 @@ export default function Projects() {
       <div className="flex items-end justify-between border-b border-white/5 pb-8">
         <div className="flex flex-col gap-2">
           <span className="font-mono-tag text-[10px] uppercase tracking-[0.4em] text-[#18E299]">Case Studies</span>
-          <h3 className="font-display-xl text-5xl text-on-surface tracking-tighter">Featured Work</h3>
+          <h3 className="font-display-xl text-4xl md:text-5xl text-on-surface tracking-tighter">Featured Work</h3>
         </div>
         <div className="hidden md:block font-mono-tag text-zinc-600 text-xs uppercase tracking-widest mb-2">
           Ref 01 // Precision Engineering
@@ -28,8 +28,8 @@ export default function Projects() {
           whileHover="hover"
           className="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card"
         >
-          {/* Card visual */}
-          <div className="lg:col-span-7">
+          {/* Card visual — hidden on mobile, visible md+ */}
+          <div className="hidden md:block lg:col-span-7">
             <div className="glass-card rounded-2xl aspect-video overflow-hidden relative p-8 group-hover:border-[#18E299]/30 transition-all duration-500 shadow-2xl bg-zinc-900/50">
               <div className="project-glow"></div>
               <motion.div
@@ -155,8 +155,8 @@ export default function Projects() {
             </button>
           </div>
 
-          {/* Card visual — phone mockup */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          {/* Card visual — phone mockup — hidden on mobile, visible md+ */}
+          <div className="hidden md:block lg:col-span-7 order-1 lg:order-2">
             <div className="glass-card rounded-2xl aspect-video overflow-hidden relative p-12 group-hover:border-[#18E299]/30 transition-all duration-500 shadow-2xl bg-zinc-900/50 flex justify-center">
               <div className="project-glow"></div>
               <motion.div

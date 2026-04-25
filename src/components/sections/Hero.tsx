@@ -27,10 +27,10 @@ export default function Hero() {
           <span className="w-2 h-2 rounded-full bg-[#18E299] animate-pulse"></span>
           AVAILABLE FOR WORK
         </motion.div>
-        <motion.h1 variants={itemVariants} className="font-display-xl text-display-xl text-on-surface mb-md">
+        <motion.h1 variants={itemVariants} className="font-display-xl text-3xl md:text-display-xl text-on-surface mb-md">
           Architecting Scalable, <span className="text-[#18E299]">High-Performance</span> Mobile Experiences
         </motion.h1>
-        <motion.p variants={itemVariants} className="font-body-base text-body-base text-on-surface-variant max-w-xl mb-lg">
+        <motion.p variants={itemVariants} className="font-body-base text-body-base text-on-surface-variant max-w-full md:max-w-xl mb-lg">
           Mobile-first software engineer specializing in Flutter and Dart. Focused on complex state management, 60fps fluid interfaces, and robust full-stack architectures using Node.js and Supabase to deliver production-ready applications.
         </motion.p>
 

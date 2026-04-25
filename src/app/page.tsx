@@ -16,7 +16,7 @@ export default function Home() {
       {/* TopNavBar */}
       <Navbar />
       {/* Main Content */}
-      <main className="flex-grow pt-32 pb-xl px-6 max-w-[1200px] mx-auto w-full z-10 flex flex-col gap-xl">
+      <main className="flex-grow pt-20 md:pt-32 pb-xl px-6 max-w-[1200px] mx-auto w-full z-10 flex flex-col gap-xl">
         {/* Hero Section */}
         <Hero />
         {/* Trust Bar */}

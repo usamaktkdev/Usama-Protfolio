@@ -43,7 +43,7 @@ export default function Navbar() {
           <a href="#contact" className="text-zinc-400 hover:text-[#18E299] transition-colors duration-200 font-['Inter'] text-sm tracking-tight">Contact</a>
         </div>
         {/* CV CTA */}
-        <a href="/Green-Portfolio/assets/CV.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/Usama-Protfolio/assets/CV.pdf" target="_blank" rel="noopener noreferrer">
           <button className="bg-[#18E299] text-[#003823] px-4 py-2 rounded-full font-body-sm font-semibold hover:bg-primary-fixed transition-colors shadow-[0_0_20px_rgba(24,226,153,0.2)]">CV</button>
         </a>
       </div>

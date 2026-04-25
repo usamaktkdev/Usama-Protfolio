@@ -51,7 +51,7 @@ export default function Projects() {
                   <div className="hidden sm:flex w-1/4 h-full border-r border-white/10 bg-[#0a0a0a] p-3 flex-col gap-3 shrink-0">
                     {/* Logo */}
                     <img
-                      src="/Green-Portfolio/assets/logo.jpg"
+                      src="/Usama-Protfolio/assets/logo.jpg"
                       alt="A Star CMS Logo"
                       className="w-full h-auto object-contain mix-blend-screen opacity-90 mb-1"
                     />

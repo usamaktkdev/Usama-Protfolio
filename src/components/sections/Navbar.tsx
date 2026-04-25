@@ -28,12 +28,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-16">
         {/* Superscript Logo */}
         <a href="#" className="flex items-start group">
-          <span
-            className="text-xs text-[#18E299] mt-1 mr-1.5 opacity-80"
-            style={{ fontFamily: '"Playwrite DE Sas", cursive' }}
-          >
-            I am
-          </span>
+          <span className="font-signature italic font-light text-[10px] md:text-xs text-[#18E299] mt-1 mr-1.5 opacity-80">i am</span>
           <span className="font-['Inter'] font-bold text-xl text-zinc-100 tracking-tighter group-hover:text-white transition-colors">Usama</span>
         </a>
         {/* Nav Links */}

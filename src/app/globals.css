@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Sas&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #050505;
+    color: #e2e2e2;
+}
+
+.aurora-glow {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 600px;
+    background: radial-gradient(circle at 40% 30%, rgba(24, 226, 153, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 60% 30%, rgba(55, 114, 207, 0.1) 0%, transparent 40%);
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-green-glow {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(24, 226, 153, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.project-card:hover .project-glow {
+    opacity: 1;
+}
+
+.project-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(24, 226, 153, 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.btn-primary-glow {
+    box-shadow: 0 0 20px rgba(24, 226, 153, 0.2);
+}
+
+.grid-texture {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+}

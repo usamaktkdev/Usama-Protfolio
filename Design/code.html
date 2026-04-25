@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevPort.io - Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0c0f0f",
+                        "secondary-container": "#0254b0",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#004492",
+                        "primary-fixed-dim": "#17e299",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "on-primary-fixed": "#002112",
+                        "outline": "#859589",
+                        "on-secondary-fixed": "#001a40",
+                        "on-secondary-container": "#b7cdff",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e5e2e1",
+                        "tertiary-container": "#c9c6c5",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary": "#e5e2e1",
+                        "secondary-fixed": "#d7e2ff",
+                        "on-primary-fixed-variant": "#005234",
+                        "on-error-container": "#ffdad6",
+                        "background": "#121414",
+                        "surface-bright": "#38393a",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#535252",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-highest": "#333535",
+                        "surface-container-high": "#282a2b",
+                        "on-surface-variant": "#bacbbe",
+                        "surface": "#121414",
+                        "on-primary-container": "#005f3d",
+                        "primary": "#51ffb4",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary": "#002f67",
+                        "inverse-primary": "#006c47",
+                        "outline-variant": "#3b4a41",
+                        "surface-variant": "#333535",
+                        "on-primary": "#003823",
+                        "surface-dim": "#121414",
+                        "on-tertiary": "#313030",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed": "#4dffb3",
+                        "secondary-fixed-dim": "#acc7ff",
+                        "surface-container": "#1e2020",
+                        "primary-container": "#18e299",
+                        "error": "#ffb4ab",
+                        "secondary": "#acc7ff",
+                        "surface-tint": "#17e299"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "48px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "xs": "4px"
+                    },
+                    fontFamily: {
+                        "mono-tag": ["Geist Mono"],
+                        "headline-lg": ["Inter"],
+                        "body-base": ["Inter"],
+                        "code-label": ["Geist Mono"],
+                        "display-xl": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "mono-tag": ["0.8125rem", { lineHeight: "1.2", fontWeight: "400" }],
+                        "headline-lg": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-base": ["1rem", { lineHeight: "1.6", fontWeight: "400" }],
+                        "code-label": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "display-xl": ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-sm": ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-md": ["1.5rem", { lineHeight: "1.3", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e2e2e2;
+        }
+        .aurora-glow {
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 600px;
+            background: radial-gradient(circle at 40% 30%, rgba(24, 226, 153, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 60% 30%, rgba(55, 114, 207, 0.1) 0%, transparent 40%);
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .hero-green-glow {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(24, 226, 153, 0.12) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+        .project-card:hover .project-glow {
+            opacity: 1;
+        }
+        .project-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(24, 226, 153, 0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        .btn-primary-glow {
+            box-shadow: 0 0 20px rgba(24, 226, 153, 0.2);
+        }
+        .grid-texture {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Decor -->
+<div class="aurora-glow"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-md border-b border-white/10">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-16">
+<a class="font-['Inter'] font-bold text-xl text-zinc-100 tracking-tighter" href="#">DevPort.io</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#18E299] border-b-2 border-[#18E299] pb-1 font-['Inter'] text-sm tracking-tight transition-transform duration-150 active:scale-95" href="#">Projects</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors duration-200 font-['Inter'] text-sm tracking-tight transition-transform duration-150 active:scale-95" href="#">Stack</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors duration-200 font-['Inter'] text-sm tracking-tight transition-transform duration-150 active:scale-95" href="#">Experience</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors duration-200 font-['Inter'] text-sm tracking-tight transition-transform duration-150 active:scale-95" href="#">Log</a>
+</div>
+<button class="bg-[#18E299] text-[#003823] px-4 py-2 rounded-full font-body-sm font-semibold hover:bg-primary-fixed transition-colors shadow-[0_0_20px_rgba(24,226,153,0.2)]">Connect</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-xl px-6 max-w-[1200px] mx-auto w-full z-10 flex flex-col gap-xl">
+<!-- Hero Section -->
+<section class="mb-xl relative">
+<div class="hero-green-glow"></div>
+<div class="flex flex-col items-start max-w-3xl">
+<div class="inline-flex items-center gap-2 bg-[#18E299]/10 text-[#18E299] px-3 py-1 rounded-full font-mono-tag text-mono-tag mb-lg border border-[#18E299]/20">
+<span class="w-2 h-2 rounded-full bg-[#18E299] animate-pulse"></span>
+                    SYSTEMS_ONLINE
+                </div>
+<h1 class="font-display-xl text-display-xl text-on-surface mb-md">
+                    Crafting <span class="text-[#18E299]">Documentation-Driven</span> Interfaces
+                </h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-xl mb-lg">
+                    Full-stack engineering focused on high-performance, accessible, and mathematically precise user experiences.
+                </p>
+<div class="flex gap-4">
+<button class="bg-[#18E299] text-[#003823] px-6 py-3 rounded-full font-body-base font-semibold hover:bg-primary-fixed transition-colors btn-primary-glow">
+                        Deploy Interaction
+                    </button>
+<button class="px-6 py-3 rounded-full font-body-base text-on-surface border border-white/10 hover:bg-white/5 transition-colors">
+                        View Source
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="flex flex-col items-center gap-lg border-y border-white/5 py-lg my-md">
+<h2 class="font-mono-tag text-mono-tag text-zinc-600 uppercase tracking-[0.2em] text-[10px]">POWERED BY AN ELITE TECH ECOSYSTEM</h2>
+<div class="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-xl">code</span>Flutter</div>
+<div class="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-xl">javascript</span>Node.js</div>
+<div class="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-xl">database</span>Firebase</div>
+<div class="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-xl">storage</span>Supabase</div>
+<div class="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-xl">table_chart</span>Postgres</div>
+<div class="flex items-center gap-2 font-['Inter'] text-sm font-medium text-on-surface"><span class="material-symbols-outlined text-xl">api</span>React</div>
+</div>
+</section>
+<!-- The Arsenal -->
+<section class="flex flex-col gap-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tighter">// THE ARSENAL</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Full-Stack Mastery -->
+<div class="glass-card rounded-xl p-lg md:col-span-1 md:row-span-2 relative overflow-hidden group border-white/10">
+<div class="absolute inset-0 grid-texture opacity-20"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[#18E299] text-3xl mb-6 block">layers</span>
+<h4 class="font-headline-md text-xl text-on-surface mb-4">Full-Stack Mastery</h4>
+<p class="font-body-sm text-sm text-zinc-400 mb-6 leading-relaxed">End-to-end development from responsive glassmorphic UIs to robust backend APIs. Focused on type-safe, maintainable codebases.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-[#18E299]/10 text-[#18E299] px-3 py-1 rounded-full font-code-label text-[10px] uppercase tracking-wider">TypeScript</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-3 py-1 rounded-full font-code-label text-[10px] uppercase tracking-wider">React</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-3 py-1 rounded-full font-code-label text-[10px] uppercase tracking-wider">Next.js</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-3 py-1 rounded-full font-code-label text-[10px] uppercase tracking-wider">Tailwind</span>
+</div>
+</div>
+</div>
+<!-- System Architecture -->
+<div class="glass-card rounded-xl p-lg md:col-span-2 relative overflow-hidden group border-white/10">
+<div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex items-start gap-6">
+<span class="material-symbols-outlined text-[#18E299] text-3xl mt-1">account_tree</span>
+<div class="flex-grow">
+<h4 class="font-headline-md text-xl text-on-surface mb-2">System Architecture</h4>
+<p class="font-body-sm text-sm text-zinc-400 mb-6 leading-relaxed">Designing scalable, event-driven microservices that handle high throughput with minimal latency. Prioritizing resilience and observable systems.</p>
+<div class="flex gap-8 border-t border-white/5 pt-6 mt-4">
+<div>
+<span class="block font-mono-tag text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Uptime</span>
+<span class="font-mono-tag text-lg text-[#18E299]">99.99%</span>
+</div>
+<div>
+<span class="block font-mono-tag text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Latency</span>
+<span class="font-mono-tag text-lg text-[#18E299]">&lt;50ms</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Deployment & CI/CD -->
+<div class="glass-card rounded-xl p-lg md:col-span-2 relative overflow-hidden group border-white/10">
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500 text-2xl">rocket_launch</span>
+<div>
+<h4 class="font-headline-md text-lg text-on-surface mb-1">Deployment &amp; CI/CD</h4>
+<p class="font-body-sm text-xs text-zinc-500">Automated pipelines and infrastructure as code.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<span class="bg-zinc-900 border border-white/5 px-4 py-1.5 rounded-full font-code-label text-[10px] text-zinc-400 uppercase tracking-widest">Docker</span>
+<span class="bg-zinc-900 border border-white/5 px-4 py-1.5 rounded-full font-code-label text-[10px] text-zinc-400 uppercase tracking-widest">Terraform</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Work -->
+<section class="flex flex-col gap-12 mt-24">
+<div class="flex items-end justify-between border-b border-white/5 pb-8">
+<div class="flex flex-col gap-2">
+<span class="font-mono-tag text-[10px] uppercase tracking-[0.4em] text-[#18E299]">Case Studies</span>
+<h3 class="font-display-xl text-5xl text-on-surface tracking-tighter">Featured Work</h3>
+</div>
+<div class="hidden md:block font-mono-tag text-zinc-600 text-xs uppercase tracking-widest mb-2">
+                    Ref 01 // Precision Engineering
+                </div>
+</div>
+<div class="grid grid-cols-1 gap-20">
+<!-- Project 1 -->
+<div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card">
+<div class="lg:col-span-7">
+<div class="glass-card rounded-2xl aspect-video overflow-hidden relative p-8 group-hover:border-[#18E299]/30 transition-all duration-500 shadow-2xl bg-zinc-900/50">
+<div class="project-glow"></div>
+<div class="relative w-full h-full border border-white/10 rounded-xl bg-black overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:scale-[1.01]">
+<!-- Browser UI Frame -->
+<div class="h-8 border-b border-white/5 flex items-center px-4 gap-2 bg-zinc-900">
+<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
+</div>
+<div class="flex-grow h-full bg-zinc-950">
+<img alt="Project Thumbnail" class="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBiZhO9Limg0DCH-ApcyyUxQ-y2zTwNmtHMYYCzRHVVGxZHq86MvB039FXbnR-x4y4kf-TmUXOllHvm6n3sjIf2ykMmy4KaQPGtiUzNgTuvb8MWDd2EQLMKt0hhad4jN6YDCcGM6K_lIm845Mm7TcKJmj6KHDPfOIoPwLltoKeT-j9PDQ8rkhD3_Hywh6Y7B2pt8ipucbjewtq9WyOpOeq6IC42Q20nsKQVKyI31rO08rnwd2dN4T1jV4Kw0WBzd8BDVfsyrL6b4c"/>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<span class="font-mono-tag text-[10px] uppercase tracking-widest text-[#18E299] bg-[#18E299]/10 px-3 py-1 rounded-full border border-[#18E299]/20">Active Deployment</span>
+<span class="h-px flex-grow bg-white/5"></span>
+<span class="font-mono-tag text-zinc-500 text-sm">2023</span>
+</div>
+<h4 class="font-display-xl text-4xl text-on-surface font-bold tracking-tight">Nexus Data Platform</h4>
+<p class="font-body-base text-zinc-400 leading-relaxed text-lg">
+                            An enterprise-grade high-throughput analytics engine designed for real-time visualization of complex datasets. Engineered with React for fluidity and Rust for raw processing power.
+                        </p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-[#18E299]/10 text-[#18E299] px-4 py-1.5 rounded-full font-code-label text-[11px] uppercase tracking-widest border border-[#18E299]/20">React</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-4 py-1.5 rounded-full font-code-label text-[11px] uppercase tracking-widest border border-[#18E299]/20">Rust</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-4 py-1.5 rounded-full font-code-label text-[11px] uppercase tracking-widest border border-[#18E299]/20">gRPC</span>
+</div>
+<button class="w-fit flex items-center gap-2 text-on-surface font-bold font-['Inter'] text-sm group-hover:text-[#18E299] transition-colors mt-4">
+                            Deep Dive <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card">
+<div class="lg:col-span-5 flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex items-center gap-4">
+<span class="font-mono-tag text-[10px] uppercase tracking-widest text-[#18E299] bg-[#18E299]/10 px-3 py-1 rounded-full border border-[#18E299]/20">Native Build</span>
+<span class="h-px flex-grow bg-white/5"></span>
+<span class="font-mono-tag text-zinc-500 text-sm">2024</span>
+</div>
+<h4 class="font-display-xl text-4xl text-on-surface font-bold tracking-tight">Aura Health App</h4>
+<p class="font-body-base text-zinc-400 leading-relaxed text-lg">
+                            A next-generation biometric tracking application that leverages machine learning to provide predictive health insights. Built with Flutter for a unified, high-fidelity mobile experience.
+                        </p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-[#18E299]/10 text-[#18E299] px-4 py-1.5 rounded-full font-code-label text-[11px] uppercase tracking-widest border border-[#18E299]/20">Flutter</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-4 py-1.5 rounded-full font-code-label text-[11px] uppercase tracking-widest border border-[#18E299]/20">Firebase</span>
+<span class="bg-[#18E299]/10 text-[#18E299] px-4 py-1.5 rounded-full font-code-label text-[11px] uppercase tracking-widest border border-[#18E299]/20">TensorFlow</span>
+</div>
+<button class="w-fit flex items-center gap-2 text-on-surface font-bold font-['Inter'] text-sm group-hover:text-[#18E299] transition-colors mt-4">
+                            Deep Dive <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2">
+<div class="glass-card rounded-2xl aspect-video overflow-hidden relative p-12 group-hover:border-[#18E299]/30 transition-all duration-500 shadow-2xl bg-zinc-900/50 flex justify-center">
+<div class="project-glow"></div>
+<!-- Mobile UI Frame -->
+<div class="w-[240px] h-full border-[6px] border-zinc-800 rounded-[2.5rem] bg-black overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative transition-transform duration-500 group-hover:scale-[1.05] group-hover:-rotate-1">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-zinc-800 rounded-b-2xl z-10"></div>
+<img alt="Project Thumbnail" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7HgxevU84KsMPGAXgHf-SkbnWKz4oaiyceaABFq6mc1GOcz6S-t_sQvJPGUmuUER4OPtwF3Uh5o7WCwHcOYfJuqzu-4elWSYo8dcqGFH553EKGMyx-OjMsVZ5aUORJ63xrdZkn4TWkFryMy-NsKCj-1qsRbTzqYpbL7whQbGaW0Io4cHlzFiCUzHr7FZCodO87Gx2kif5doAFSfKU051NhVU6umZ3GhtU3Jv6qdI4Fy-HcubABERsLsMfgBFrqgbEhDuBShP1qgQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Let's Build Something Section -->
+<section class="py-32 border-t border-white/5 flex flex-col items-center text-center gap-12 mt-24">
+<div class="max-w-3xl">
+<h2 class="font-display-xl text-5xl md:text-7xl font-black text-on-surface mb-8 tracking-tighter leading-none">
+                    Let's Build Something<br/><span class="text-[#18E299]">Architectural</span>.
+                </h2>
+<p class="font-body-base text-xl text-zinc-400 max-w-xl mx-auto">Currently open to elite collaborations and enterprise-scale engineering roles.</p>
+</div>
+<div class="w-full max-w-2xl bg-zinc-900/40 border border-white/10 rounded-full p-2.5 flex items-center justify-between group hover:border-[#18E299]/40 transition-all duration-300 shadow-xl">
+<span class="font-['Geist_Mono'] text-lg md:text-2xl text-on-surface px-8 tracking-tight truncate">hello@usama.dev</span>
+<button class="bg-[#18E299] text-[#003823] px-8 py-4 rounded-full font-code-label font-black text-sm tracking-widest hover:bg-primary-fixed transition-transform active:scale-95 shadow-lg">COPY</button>
+</div>
+<div class="flex gap-10 items-center pt-8">
+<a class="text-zinc-500 hover:text-[#18E299] transition-colors" href="#"><span class="material-symbols-outlined text-3xl">terminal</span></a>
+<a class="text-zinc-500 hover:text-[#18E299] transition-colors" href="#"><span class="material-symbols-outlined text-3xl">share</span></a>
+<a class="text-zinc-500 hover:text-[#18E299] transition-colors" href="#"><span class="material-symbols-outlined text-3xl">mail</span></a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-black border-t border-white/5 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-6 gap-8 font-['Geist_Mono'] text-[10px] uppercase tracking-[0.2em] text-zinc-600">
+<div>© 2024 Developer Portfolio // Engineered for Scale</div>
+<div class="flex gap-8">
+<a class="hover:text-[#18E299] transition-colors" href="#">GitHub</a>
+<a class="hover:text-[#18E299] transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-[#18E299] transition-colors" href="#">Source</a>
+</div>
+</div>
+</footer>
+</body></html>
